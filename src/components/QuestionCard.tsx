@@ -3,7 +3,7 @@ import { AnswerObject } from "../App";
 import { Wrapper, ButtonWrapper } from "./QuestionCard.style";
 
 type Props = {
-  question: string;
+  readonly question: string;
   answers: string[];
   callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
   userAnswer: AnswerObject | undefined;
