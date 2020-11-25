@@ -95,10 +95,6 @@ const App = () => {
           Next Questions
         </button>
       ) : null}
-
-      <button className="next" onClick={nextQuestion}>
-        Next Questions
-      </button>
     </div>
   );
 };
