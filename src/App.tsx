@@ -54,14 +54,26 @@ const App = () => {
       {!gameOver && <p className="score">Score:</p>}
       {loading && <p>Loading Questions ...</p>}
 
-      {/* <QuestionCard
-        questionNumber={number + 1}
-        totalQuestions={TOTAL_QUESTIONS}
-        question={questions[number].question}
-        answers={questions[number].answers}
-        userAnswer={userAnswers ? userAnswers[number] : undefined}
-        callback={checkAnswer}
-      /> */}
+      {!loading && !gameOver && (
+        <QuestionCard
+          questionNumber={number + 1}
+          totalQuestions={TOTAL_QUESTIONS}
+          question={questions[number].question}
+          answers={questions[number].answers}
+          userAnswer={userAnswers ? userAnswers[number] : undefined}
+          callback={checkAnswer}
+        />
+      )}
+
+      {!gameOver &&
+      !loading &&
+      userAnswers.length === number + 1 &&
+      number !== TOTAL_QUESTIONS - 1 ? (
+        <button className="next" onClick={nextQuestion}>
+          Next Questions
+        </button>
+      ) : null}
+
       <button className="next" onClick={nextQuestion}>
         Next Questions
       </button>
